@@ -1,0 +1,56 @@
+# PROYECTO LONGITUD DE UNA FRASE
+
+# identificar la longitud de una palabra ingresada
+# deberá tener entre 4 y 8 letras
+# si la longitud de la palabra se encuentra en el rango de 4 a 8 letras, se debe imprimir un msj que es correcta
+# si tiene menos de 4 que diga: Hacen falta letras. Solo tiene N letras
+# si la palabra tiene mas de 8 letras: Sobran letras. Tiene n letras
+
+
+while True: # Utilizamos while true para que se repita el programa hasta obtener el resultado deseado,
+    palabra = input("Ingrese una frase cualquiera, la cual debera contener entre 4 y 8 letras: ")
+    if len(palabra) >= 4 and len(palabra) <=8: # establecemos el rango del numero de letras deseado
+        print("La palabra es correcta") # si es correcta se indica que la misma cumple con lo solicitado
+        break # si es correcta la palabra, se termina el programa
+    elif len(palabra) < 4: 
+        print("Hacen falta letras. Solo tiene:", len(palabra), "letras")
+    elif len(palabra) > 8:
+        print("Sobran letras. Tiene:", len(palabra), "letras")
+print("Fin del programa")
+
+
+#########################################################################################################################
+
+
+
+
+# Programa que en base a 2 numeros de entrada, coordenadas
+# identifique en cual de los 4 cuadrantes se encuentra el punto
+# el programa debe verificar que ninguna coordenada sea 0
+
+# (+,+) => Cuad. I", "(-,+) => Cuad. II", "(-,-) => Cuad. III", "(+,-) => Cuad. IV
+
+listadecuadrantes = ["Cuadrante I", "Cuadrante II", "Cuadrante III"] #uso de lista o de nuestra colección, la cual está incompleta
+
+listadecuadrantes.append("Cuadrante IV") # a manera de ejercicio, agregamos el elemento faltante a nuestra lista
+
+print(listadecuadrantes) # ésta lista sería nuestra colección final para correr el programa
+
+
+x = int (input ('Ingresa el valor de x: ')) #se definiran las variables de x y y
+y = int (input ('Ingresa el valor de y: '))
+
+if x==0 and y==0:
+     print ('Las coordendas se encuentran en el Origen, no se puede poner valores 0, vuelva a intentarlo')
+elif x==0:
+     print("Las coordenadas ingresadas en el eje X no pueden ser 0, vuelva a intentarlo")
+elif y==0:
+     print("Las coordenadas ingresadas en el eje Y no pueden ser 0, intente de nuevo") #estas 3 condicionantes evitan que se usen ceros
+elif x>0 and y>0:
+    print(listadecuadrantes[:1])
+elif x<0 and y>0:
+     print (listadecuadrantes[1:2])
+elif x<0 and y<0:
+     print (listadecuadrantes[2:3])
+elif x>0 and y<0:
+     print (listadecuadrantes[3:4])
